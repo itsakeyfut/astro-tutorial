@@ -1,5 +1,14 @@
 ---
 const pageTitle = "About Me";
+
+const identity = {
+  firstName: "Itsuki",
+  country: "Japan",
+  occupation: "Web Developer",
+  hobbies: ["Playing games", "Reading books", "Napping all day"],
+};
+
+const skills = ["C++", "Unreal Engine", "HLSL", "Blender"];
 ---
 
 <html>
@@ -16,5 +25,18 @@ const pageTitle = "About Me";
     <h1>{pageTitle}</h1>
     <h2>Welcome to my about page!</h2>
     <p>Creating video games is my passion!</p>
+
+    <h3>identity</h3>
+    <ul>
+      <li>My name is {identity.firstName}.</li>
+      <li>I was born and raised in {identity.country}. I work as a {identity.occupation}</li>
+      {identity.hobbies.length >= 2 &&
+        <li>My hobbies include: {identity.hobbies.join(", ")}</li>
+      }
+    </ul>
+    <p>My Skills</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
   <body>
 </html>
