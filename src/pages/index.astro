@@ -9,16 +9,24 @@ const pageTitle = "Home";
 
 <html>
   <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>{pageTitle}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
   </head>
 
   <body>
-	<Header />
+    <Header />
 
-	<h1>{pageTitle}</h1>
-	<p>Welcome to my Astro tutorial!</p>
-	<Footer />
+    <h1>{pageTitle}</h1>
+    <p>Welcome to my Astro tutorial!</p>
+    <Footer />
+    <script>
+      const menu = document.querySelector(".menu");
+      
+      menu?.addEventListener("click", () => {
+        const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+        menu.setAttribute('aria-expanded', `${!isExpanded}`);
+      });
+    </script>
   </body>
 </html>
