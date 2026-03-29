@@ -1,27 +1,9 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
 const pageTitle = "Home";
 ---
-
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-
-  <body>
-    <Header />
-
-    <h1>{pageTitle}</h1>
-    <p>Welcome to my Astro tutorial!</p>
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Welcome to my astro tutorial!</h2>
+</BaseLayout>
