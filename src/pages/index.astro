@@ -1,9 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/global.css";
+import Greeting from '../components/Greeting';
 
 const pageTitle = "Home";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <h2>Welcome to my astro tutorial!</h2>
+  <!--
+    `clint:load` ディレクティブによって、ページが読み込まれたときに JavaScript をクライアントに送信して再実行するように Astro に指示するもの。
+    これによりコンポーネントはインタラクティブになり、ハイドレートされたコンポーネントと呼ばれる。 
+  -->
+  <Greeting client:load messages={['Hi', 'Hello', 'Yo', 'Hey']} />
 </BaseLayout>
